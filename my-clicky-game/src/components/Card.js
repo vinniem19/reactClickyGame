@@ -10,25 +10,30 @@ import pastelTrainRight from "../pastel-train-right.jpg";
 import redTrainLeft from "../red-train-left.jpg";
 import yellowTrainRight from "../yellow-train-right.jpg";
  
+
  
 
-function Card() {
+function Card(props) {
+    
     return(
-        <div class="container">
-        <img className="card-img" src={blueTrainLeft} alt=""></img>
-        <img className="card-img" src={blueTrainRight} alt=""></img>
-        <img className="card-img" src={coalTrainLeft} alt=""></img>
-        <img className="card-img" src={colorTrainLeft} alt=""></img>
-        <img className="card-img" src={colorTrainRight} alt=""></img>
-        <img className="card-img" src={funTrainLeft} alt=""></img>
-        <img className="card-img" src={pastelTrainRight} alt=""></img>
-        <img className="card-img" src={redTrainLeft} alt=""></img>
-        <img className="card-img" src={yellowTrainRight} alt=""></img>
+        <div className="container">
+            <div className="card-header">
+                Score: {props.score} | High Score: 
+            </div>
+        <img className="card-img" src={blueTrainLeft} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={blueTrainRight} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={coalTrainLeft} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={colorTrainLeft} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={colorTrainRight} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={funTrainLeft} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={pastelTrainRight} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={redTrainLeft} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={yellowTrainRight} alt="" onClick={props.handleIncrement}></img>
 
         </div>
 
 
     );
-}
+    }
 
 export default Card;
