@@ -11,29 +11,50 @@ import redTrainLeft from "../red-train-left.jpg";
 import yellowTrainRight from "../yellow-train-right.jpg";
  
 
- 
+class Card extends React.Component{
 
-function Card(props) {
-    
+    state = {
+        count: 0,
+        highScore: 0,
+        doubleClick: false
+      };
+
+      // handleIncrement increases this.state.count by 1
+  handleIncrement = () => {
+    // We always use the setState method to update a component's state
+    this.setState({ count: this.state.count + 1 });
+  };
+
+// let scoreData = {
+//   score: 0,
+//   highScore: 0
+// }
+//  handleClick = () => {
+//   console.log("clicked");
+//  }
+// function Card() {
+    render() {
     return(
+
         <div className="container">
             <div className="card-header">
-                Score: {props.score} | High Score: 
+                Score: {this.state.count} | High Score: {this.state.highScore}
+                
             </div>
-        <img className="card-img" src={blueTrainLeft} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={blueTrainRight} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={coalTrainLeft} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={colorTrainLeft} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={colorTrainRight} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={funTrainLeft} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={pastelTrainRight} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={redTrainLeft} alt="" onClick={props.handleIncrement}></img>
-        <img className="card-img" src={yellowTrainRight} alt="" onClick={props.handleIncrement}></img>
+        <img className="card-img" src={blueTrainLeft} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={blueTrainRight} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={coalTrainLeft} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={colorTrainLeft} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={colorTrainRight} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={funTrainLeft} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={pastelTrainRight} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={redTrainLeft} alt="" onClick={this.handleIncrement}></img>
+        <img className="card-img" src={yellowTrainRight} alt="" onClick={this.handleIncrement}></img>
 
         </div>
 
 
     );
     }
-
+}
 export default Card;

@@ -18,9 +18,9 @@ class Counter extends React.Component {
   // The render method returns the JSX that should be rendered
   render() {
     return (
-      <div>
-        <Card
-          score={this.state.score}
+      <div className="container">
+        <Card 
+        score={this.state.score}
         />
       </div>
     );
