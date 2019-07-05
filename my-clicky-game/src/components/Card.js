@@ -1,29 +1,28 @@
 import React from 'react';
 import "../styles/Card.css";
-import blueTrainLeft from "../blue-train-left.jpg";
-import blueTrainRight from "../blue-train-right.jpg";
-import coalTrainLeft from "../coal-train-left.jpg";
-import colorTrainLeft from "../color-train-left.png";
-import colorTrainRight from "../colorTrainRight.jpg";
-import funTrainLeft from "../fun-train-left.png";
-import pastelTrainRight from "../pastel-train-right.jpg";
-import redTrainLeft from "../red-train-left.jpg";
-import yellowTrainRight from "../yellow-train-right.jpg";
- 
 
-class Card extends React.Component{
+function Card(props) {
+    // handleClick = id => {
+    //     let doubleClick;
+    //     let update = {
+    //         heroes: [...this.state.heroes],
+    //         score: this.state.score,
+    //         topScore: this.state.topScore
+    //     }
+    // }
 
-    state = {
-        count: 0,
-        highScore: 0,
-        doubleClick: false
-      };
-
-      // handleIncrement increases this.state.count by 1
-  handleIncrement = () => {
-    // We always use the setState method to update a component's state
-    this.setState({ count: this.state.count + 1 });
-  };
+    // randomizing the trains
+    // update.newTrains = update.newTrains.sort(() => .5 - Math.random());
+    
+    
+    // using trains.json, if this.id is clicked then countClick goes up
+        // if (this.trains.id.click === true) {
+        //     this.setState({clickCount: this.state.clickCount + 1})
+        // }
+        
+    // after count click is at 2, then doubleClick changes to true and
+    // end game
+  // };
 
 // let scoreData = {
 //   score: 0,
@@ -32,29 +31,21 @@ class Card extends React.Component{
 //  handleClick = () => {
 //   console.log("clicked");
 //  }
-// function Card() {
-    render() {
-    return(
+   // const Card = () => {
+    
+    return (
 
         <div className="container">
             <div className="card-header">
-                Score: {this.state.count} | High Score: {this.state.highScore}
-                
+                Score: {props.count} | High Score: {props.highScore}
             </div>
-        <img className="card-img" src={blueTrainLeft} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={blueTrainRight} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={coalTrainLeft} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={colorTrainLeft} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={colorTrainRight} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={funTrainLeft} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={pastelTrainRight} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={redTrainLeft} alt="" onClick={this.handleIncrement}></img>
-        <img className="card-img" src={yellowTrainRight} alt="" onClick={this.handleIncrement}></img>
-
+            <div className="img-container">
+                <img src={props.image} alt={props.name} onClick={props.handleIncrement} />
+            </div>
+              
         </div>
-
-
     );
-    }
-}
+    } 
+
+
 export default Card;
