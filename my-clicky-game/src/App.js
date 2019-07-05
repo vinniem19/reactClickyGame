@@ -20,7 +20,15 @@ class App extends React.Component {
     const handleIncrement = () => {
      // We always use the setState method to update a component's state
    this.setState({count: this.state.count + 1})};
+   
+   // randomizes image positions display
+   trains.sort(() => .5 - Math.random());
 
+   // get high score 
+      if (this.state.count > this.state.highScore) {
+        this.setState({highScore: this.state.count})
+      }
+    
 
     return (
     <div className="App">
@@ -38,6 +46,7 @@ class App extends React.Component {
       highScore={this.state.highScore}
       handleIncrement={handleIncrement}
       key={this.id}
+      
       />
       ))
     }
