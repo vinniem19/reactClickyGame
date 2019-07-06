@@ -3,6 +3,7 @@ import './styles/App.css';
 import Navbar from './components/Navbar';
 import Jumbotron from './components/Jumbotron';
 import Card from './components/Card';
+import Header from './components/Header';
 import trains from './trains.json';
 
 class App extends React.Component {
@@ -34,18 +35,20 @@ class App extends React.Component {
     <div className="App">
       <Navbar />
       <Jumbotron />
-      
+      <Header
+       count={this.state.count}
+       highScore={this.state.highScore}
+       />
         
         
       {this.state.trains.map(train => (
       <Card
-      id={train.id}
+      
       image={train.image}
       name={train.name} 
-      count={this.state.count}
-      highScore={this.state.highScore}
+      
       handleIncrement={handleIncrement}
-      key={this.id}
+      key={train.id}
       
       />
       ))

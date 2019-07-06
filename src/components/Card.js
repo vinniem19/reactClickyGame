@@ -35,13 +35,13 @@ function Card(props) {
     
     return (
 
+        <div className="container">
+            
         
-        <div id="img-container">
-             <div className="card-header">
-                Score: {props.count} | High Score: {props.highScore}
-            </div>
+            <div className="img-container">
                 <img src={props.image} alt={props.name} onClick={props.handleIncrement} />
             </div>
+        </div>
               
         
     );
